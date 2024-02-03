@@ -14,18 +14,14 @@ public class SignInTest extends BaseTest {
     private final String password = faker.internet().password(6, 12);
 
     @Before
-    public void setUp(){
-//        signUpPage = new SignUpPage(driver);
-//        signInPage = new SignInPage(driver);
-//        mainPage = new MainPage(driver);
-//        basePage = new BasePage(driver);
+    public void setUp() {
         clientSteps.addClientsDataToClear(clientSteps.setAccessToken(clientSteps.createClient(email, password, name)));
     }
 
     @Test
     @DisplayName("Логин пользователем через кнопку \"Войти в аккаунт\"")
     @Description("В тесте проверяется логин пользователем через кнопку \"Войти в аккаунт\" расположенной на главной странице")
-    public void signViaByAccountButtonMainPageShowsOk(){
+    public void signViaByAccountButtonMainPageShowsOk() {
         basePage.openMainPage();
         mainPage.enterByAccountEnterButtonMainPage();
         signInPage.setEmail(email);
@@ -34,10 +30,11 @@ public class SignInTest extends BaseTest {
         Assert.assertTrue(mainPage.checkOrderButtonMainPage());
 
     }
+
     @Test
     @DisplayName("Логин пользователем через кнопку \"Войти в личный кабинет\"")
     @Description("В тесте проверяется логин пользователем через кнопку \"Войти в личный кабинет\" расположенной на главной странице")
-    public void signInViaPersonalAccountButtonMainPageShowsOk(){
+    public void signInViaPersonalAccountButtonMainPageShowsOk() {
         basePage.openMainPage();
         mainPage.enterByPersonalAccountEnterButtonMainPage();
         signInPage.setEmail(email);
@@ -46,10 +43,11 @@ public class SignInTest extends BaseTest {
         Assert.assertTrue(mainPage.checkOrderButtonMainPage());
 
     }
+
     @Test
     @DisplayName("Логин пользователем через кнопку \"Войти\" в форме регистрации")
     @Description("В тесте проверяется логин пользователем через кнопку \"Войти\" расположенной на странице регистрации")
-    public void signInViaEnterButtonSignUpPageShowsOk(){
+    public void signInViaEnterButtonSignUpPageShowsOk() {
         basePage.openSignUpPage();
         signUpPage.enterButtonRestorePasswordOrSignUpPage();
         signInPage.setEmail(email);
@@ -58,10 +56,11 @@ public class SignInTest extends BaseTest {
         Assert.assertTrue(mainPage.checkOrderButtonMainPage());
 
     }
+
     @Test
     @DisplayName("Логин пользователем через кнопку \"Войти\" в форме восстановления пароля")
     @Description("В тесте проверяется логин пользователем через кнопку \"Войти\" расположенной на странице восстановления пароля")
-    public void signInViaEnterButtonRestorePasswordPageShowsOk(){
+    public void signInViaEnterButtonRestorePasswordPageShowsOk() {
         basePage.openRecoveryPasswordPage();
         signUpPage.enterButtonRestorePasswordOrSignUpPage();
         signInPage.setEmail(email);

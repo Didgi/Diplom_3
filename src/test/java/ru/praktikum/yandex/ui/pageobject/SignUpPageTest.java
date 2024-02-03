@@ -5,11 +5,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import ru.praktikum.yandex.api.client.UserClient;
-import ru.praktikum.yandex.api.step.ClientSteps;
-
 
 public class SignUpPageTest extends BaseTest {
     private final Faker faker = new Faker();
@@ -17,13 +13,6 @@ public class SignUpPageTest extends BaseTest {
     private final String email = faker.internet().emailAddress();
     private final String passwordLessSixSymbols = faker.internet().password(1, 5);
     private final String passwordMoreSixSymbols = faker.internet().password(6, 12);
-
-//    @Before
-//    public void setUp() {
-//        clientSteps = new ClientSteps(new UserClient());
-//        signUpPage = new SignUpPage(driver);
-//        basePage = new BasePage(driver);
-//    }
 
     @Test
     @DisplayName("Проверка успешной регистрации пользователя")
