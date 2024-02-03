@@ -7,6 +7,8 @@
 
 2. Используемые библиотеки для реализации ui тестов добавлены в pom.xml: Selenium, Webdrivermanager, JUnit 4, Rest-Assured, Gson, Lombok, JavaFaker, Allure, Maven.
 
+
+
 <h3>Запуск:</h3>
 1. Чтобы запустить тесты в браузере по-умолчанию (yandex), необходимо выполнить команду: mvn clean test;
 
